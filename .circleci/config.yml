@@ -28,6 +28,9 @@ jobs:
        - run:
            name: run tests
            command: cd test_javascript && npm run test
+       - run:
+           name: run new test cases
+           command: cd test-api-js && npm run test
 workflows:
   sample:
     jobs:
