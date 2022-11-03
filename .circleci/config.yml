@@ -24,10 +24,12 @@ jobs:
        - run:
            name: install dependencies
            command: cd test_javascript && npm install
-      
        - run:
            name: run tests
            command: cd test_javascript && npm run test
+       - run:
+           name: install dependencies of test-api-js
+           command: cd test-api-js && npm install
        - run:
            name: run new test cases
            command: cd test-api-js && npm run test
