@@ -44,6 +44,21 @@ describe("todo api test suite", () => {
             })
     })
 
+    test("UPDATE /", async () => {
+        let update_to_do = {
+            "id": 3,
+            "done": true
+        }
+        await request(app).put("/updateToDo/" + update_to_do.id ).send(update_to_do)
+            .then((response) => {
+                console.log(response.body)
+                let len = response.body.todo.length
+                let toDo_Array = response.body.todo
+                expect(toDo_Array[len-1].done).toBe(update_to_do.done)
+                expect(toDo_Array[len-1].id).toBe(update_to_do.id)
+            })
+    })
+
 
 });
 

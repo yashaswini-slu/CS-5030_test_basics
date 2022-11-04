@@ -35,9 +35,15 @@ class todoservice{
         return this.todos;
     }
 
-    update_todo(id, todo){
-        // Your code here
+    update_todo(request) {
+        this.todos.todo.map(data => {
+            (data.id == request.params.id) ?
+                (data.done=request.body.done) : (data)
+        })
+        console.log(this.todos)
+        return this.todos
     }
+
 }
 
 
