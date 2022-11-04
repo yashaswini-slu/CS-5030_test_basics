@@ -21,7 +21,7 @@ app.put('/updateToDo', function(request, response) {
   response.json(todo_service.update_todo(request))
 })
 
-app.delete('/deleteToDo', function(request, response) {
+app.delete('/deleteToDo/:id', function(request, response) {
   let todo_service = new todoservice();
   response.json(todo_service.delete_todo(request))
 })

@@ -7,13 +7,13 @@ class todoservice{
             "done": false
         },{
             "id":2,
-            "title": "T1",
-            "description": "D1",
+            "title": "T2",
+            "description": "D2",
             "done": false
         },{
             "id":3,
-            "title": "T1",
-            "description": "D1",
+            "title": "T3",
+            "description": "D3",
             "done": false
         }]
     }
@@ -25,14 +25,14 @@ class todoservice{
         return this.todos;
     }
 
-    add_todo(todo){
-        console.log('todo-------', todo)
-        this.todos = this.todo_data.todo.push((todo.body));
-        return this.todo_data.todo;
+    add_todo(request){
+        this.todos.todo.push((request.body));
+        return this.todos;
     }
-
-    delete_todo(id){
-        // Your code here
+     
+    delete_todo(request){
+        this.todos.todo.splice(this.todo_data.todo.indexOf({"id": request.params.id}),1)
+        return this.todos;
     }
 
     update_todo(id, todo){
